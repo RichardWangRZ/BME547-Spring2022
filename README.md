@@ -14,3 +14,5 @@ Here are the secifications for my database
 	- City
 	- State
 	- Zip
+
+### Add information files to README
