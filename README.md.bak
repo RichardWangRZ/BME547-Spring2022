@@ -1,6 +1,6 @@
 # BME547-Spring2022
 
-This is my repository for BME 547 classwork.
+This is my repository for BME 547 classwork.<br>
 In this repository, I will be developing a health database.
 
 ## Health Database
@@ -14,3 +14,5 @@ Here are the secifications for my database
 	- City
 	- State
 	- Zip
+
+### Add information files to README
