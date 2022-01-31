@@ -15,15 +15,37 @@ def receive_x():
     return x
 
 
-def find_y(tuple1, tuple2, x):
+def calculate_y(tuple1, tuple2, x):
     slope = (tuple2[1] - tuple1[1]) / (tuple2[0] - tuple1[0])
     b = tuple2[1] - (slope * tuple2[0])
     y = (slope * x) + b
     return y
 
 
-if __name__ == "__main__":
+def find_y():
     tuple1, tuple2 = receive_tuples()
     x = receive_x()
-    y = find_y(tuple1, tuple2, x)
-    print(y)
+    y = calculate_y(tuple1, tuple2, x)
+    return y
+
+
+def determine_point(tuple1, tuple2, tuple3):
+    expected_y = calculate_y(tuple1, tuple2, tuple3[0])
+    if expected_y == tuple3[1]:
+        return True
+    else:
+        return False
+
+
+def check_point():
+    tuple1, tuple2 = receive_tuples()
+    tuple_x3 = float(input("Enter x3:"))
+    tuple_y3 = float(input("Enter y3:"))
+    tuple3 = (tuple_x3, tuple_y3)
+    if_on_line = determine_point(tuple1, tuple2, tuple3)
+    return if_on_line
+
+
+if __name__ == "__main__":
+    print(find_y())
+    print(check_point())
