@@ -24,5 +24,6 @@ def find_y(tuple1, tuple2, x):
 
 if __name__ == "__main__":
     tuple1, tuple2 = receive_tuples()
-    x = receive_x
-    y1 = find_y(tuple1, tuple2, x)
+    x = receive_x()
+    y = find_y(tuple1, tuple2, x)
+    print(y)
