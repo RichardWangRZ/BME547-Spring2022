@@ -18,7 +18,7 @@ def main():
     add_test_to_patient(db, 111, "HDL", 100)
     print(db)
     return db
-    
+
 
 def find_patient(db, id):
     for patient in db:
@@ -28,7 +28,7 @@ def find_patient(db, id):
 
 
 def add_test_to_patient(db, id, test_name, test_result):
-    patient  = find_patient(db, id)
+    patient = find_patient(db, id)
     test_tuple = (test_name, test_result)
     patient[3].append(test_tuple)
 
@@ -38,8 +38,6 @@ def print_directory(db):
     for room, patient in zip(rooms, db):
         print("{} - {}".format(patient[0], room))
         # print("Name: {}    Room: {}".format(patient[0], rooms[i]))
-        
-
 
 
 if __name__ == "__main__":

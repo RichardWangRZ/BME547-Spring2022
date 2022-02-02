@@ -29,8 +29,8 @@ def accept_input(test_name):
 
 
 def print_result(test_name, test_value, test_class):
-    out_string = "The test value of {} for {} is {}".format(test_value, test_name, test_class)
-    print(out_string)
+    print("The test value of {} for {}"
+          " is {}".format(test_value, test_name, test_class))
     return
 
 
@@ -85,7 +85,6 @@ def TC_driver():
     TC_value = accept_input("Total Cholesterol")
     classification = check_TC(TC_value)
     print_result("Total Cholesterol", TC_value, classification)
-
 
 
 if __name__ == "__main__":

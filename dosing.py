@@ -6,7 +6,6 @@
 """
 
 
-
 def info_input():
     print("PATIENT WEIGHT")
     print("Enter patient weight followed by units of kg or lb.")
@@ -15,8 +14,8 @@ def info_input():
     weight_data = weight_input.split(" ")
     weight = float(weight_data[0])
     units = weight_data[1]
-    return weight,units
-    
+    return weight, units
+
 
 def dose_calculation(weight, units, diagnosis):
     if units == "lb":
@@ -25,7 +24,7 @@ def dose_calculation(weight, units, diagnosis):
     dosage_mg_per_kg = dosages_mg_per_kg[diagnosis-1]
     dosage_mg_first_day = weight * dosage_mg_per_kg
     return weight, dosage_mg_first_day
-    
+
 
 def info_output(weight, dosage_mg_first_day):
     print("CORRECT DOSAGE")
@@ -44,7 +43,6 @@ def dose_amount():
     print("4 - Pharyngitis/tonsilitis")
     diagnosis = int(input("Enter a number: "))
     info_output(dose_calculation(info_input(), diagnosis))
-
 
 
 if __name__ == '__main__':

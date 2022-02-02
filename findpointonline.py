@@ -8,7 +8,7 @@ def receive_tuples():
     tuple_y2 = float(input("Enter y2:"))
     tuple2 = (tuple_x2, tuple_y2)
     return tuple1, tuple2
- 
+
 
 def receive_x():
     x = float(input("Enter your new value x:"))
