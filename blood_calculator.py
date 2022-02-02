@@ -87,6 +87,5 @@ def TC_driver():
     print_result("Total Cholesterol", TC_value, classification)
 
 
-
 if __name__ == "__main__":
     interface()
