@@ -7,9 +7,12 @@ def input_weight_entry():
 
 
 def parse_weight_input(weight_input):
+    # if weight_input.find(" ") == -1:
+    #     raise ArgumentError("Need a space")
     weight, units = weight_input.split(' ')
-    weight = int(weight)
-    if units == "lb":
+    weight = float(weight)
+    units = units.lower()
+    if units in ["lb", "lbs", "Lb", "pound", "pounds", "#"]:
         weight_kg = convert_lb_to_kg(weight)
     else:
         weight_kg = weight
@@ -20,6 +23,11 @@ def parse_weight_input(weight_input):
 def convert_lb_to_kg(weight_lb):
     weight_kg = weight_lb / 2.20462
     return weight_kg
+
+
+def add(a, b):
+    c = a + b
+    return c
 
 
 if __name__ == "__main__":
