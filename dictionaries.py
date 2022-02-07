@@ -5,7 +5,7 @@ def create_dictionary():
     return x
 
 
-def add_to_dictionary(in_dictionary, new_word, 
+def add_to_dictionary(in_dictionary, new_word,
                       new_definition):
     in_dictionary[new_word] = new_definition
 
