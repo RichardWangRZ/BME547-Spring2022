@@ -33,7 +33,11 @@ class Patient:
 
 
 def add_patient(patient_name, patient_id, age, dob=None):
-    new_patient = Patient(patient_name, patient_id, age, dob)
+    # new_patient = Patient(patient_name, patient_id, age, dob)
+    new_patient = {"name": patient_name,
+                   "id": patient_id,
+                   "age": age,
+                   "tests": []}
     return new_patient
 
 
@@ -41,7 +45,6 @@ def main():
     db = []
     x = add_patient("Ann Ables", 342, 40)
     db.append(x)
-    print(db[0].name)
     y = add_patient("Bob Boyles", 50, 50, "1/1/1970")
     db.append(y)
     z = add_patient("Chris Columbus", 111, 35)
@@ -57,7 +60,7 @@ def main():
 
 def find_patient(db, id):
     for patient in db:
-        if patient.id == id:
+        if patient["id"] == id:
             return patient
     return
 
@@ -75,7 +78,7 @@ def output_patient(patient):
 def add_test_to_patient(db, id, test_name, test_result):
     patient = find_patient(db, id)
     test_tuple = (test_name, test_result)
-    patient.tests.append(test_tuple)
+    patient["tests"].append(test_tuple)
 
 
 def print_directory(db):
@@ -92,5 +95,5 @@ def create_id_tag_string(patient):
 
 if __name__ == "__main__":
     db = main()
-    # print_directory(db)
-    # print(create_id_tag_string(find_patient(db, 111)))
+    print_directory(db)
+    print(create_id_tag_string(find_patient(db, 111)))
