@@ -43,8 +43,8 @@ if __name__ == "__main__":
     output_json(person)
     """
 
-    # filename = "patient.json"
-    filename = "my_boolean.json"
+    filename = "patient.json"
+    # filename = "my_boolean.json"
     x = input_json(filename)
     print(x)
     print(type(x))
