@@ -29,7 +29,7 @@ def check_HDL_from_internet():
     answer = check_HDL(hdl_value)
     print("The answer is {}".format(answer))
     return answer
-    
+
 
 @app.route("/add", methods=["POST"])
 def add():
@@ -46,6 +46,7 @@ def add():
 def add_2(a, b):
     answer = int(a) + int(b)
     return jsonify(answer)
+
 
 if __name__ == "__main__":
     app.run()
