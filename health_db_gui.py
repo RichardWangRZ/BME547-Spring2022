@@ -56,7 +56,7 @@ def main_window():
                                                       entered_blood_type)
         # Update interface based on results
         status_label.configure(text=status_string)
-    
+
     def image_cmd():
         filename = filedialog.askopenfilename()
         if filename == "":
@@ -132,7 +132,7 @@ def main_window():
     ttk.Button(root, text="Ok", command=ok_cmd).grid(column=1, row=20)
     ttk.Button(root, text="Cancel", command=cancel_cmd).grid(column=2, row=20)
     ttk.Button(root, text="Change Image", command=image_cmd)\
-        .grid(column = 3, row = 20)
+        .grid(column=3, row=20)
 
     # Start GUI
     root.after(2000, ok_cmd)
