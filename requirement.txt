@@ -3,3 +3,4 @@ pytest-pycodestyle
 sphinx
 requests
 flask
+pillow
