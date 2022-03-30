@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import filedialog
+from PIL import Image, ImageTk
 
 
 def verify_GUI_input(input_id):
@@ -54,12 +56,23 @@ def main_window():
                                                       entered_blood_type)
         # Update interface based on results
         status_label.configure(text=status_string)
+    
+    def image_cmd():
+        filename = filedialog.askopenfilename()
+        if filename == "":
+            return
+        pil_image_raw = Image.open(filename)
+        # print(pil_image_raw.size)
+        pil_image = pil_image_raw.resize((200, 200))
+        tk_image = ImageTk.PhotoImage(pil_image)
+        image_label.configure(image=tk_image)
+        image_label.image = tk_image
 
     # Create root/base window
     root = tk.Tk()
 
     root.title("Health Database")
-    root.geometry("700x400")
+    root.geometry("800x400")
 
     ttk.Label(root, text="Blood Donor Database")\
         .grid(column=0, row=0, columnspan=2, sticky=tk.W)
@@ -107,11 +120,22 @@ def main_window():
     status_label = ttk.Label(root, text="Status")
     status_label.grid(column=0, row=20)
 
+    # Image
+    pil_image_raw = Image.open("DukeHealth.jpg")
+    pil_image = pil_image_raw.resize((200, 100))
+    tk_image = ImageTk.PhotoImage(pil_image)
+    image_label = ttk.Label(root, image=tk_image)
+    image_label.image = tk_image
+    image_label.grid(column=4, row=0, rowspan=5)
+
     # Buttons
     ttk.Button(root, text="Ok", command=ok_cmd).grid(column=1, row=20)
     ttk.Button(root, text="Cancel", command=cancel_cmd).grid(column=2, row=20)
+    ttk.Button(root, text="Change Image", command=image_cmd)\
+        .grid(column = 3, row = 20)
 
     # Start GUI
+    root.after(2000, ok_cmd)
     root.mainloop()
 
 
