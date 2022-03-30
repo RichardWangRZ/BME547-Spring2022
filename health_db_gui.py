@@ -28,7 +28,7 @@ def main_window():
         """
         root.destroy()
 
-    def ok_cmd
+    def ok_cmd():
         """Obtains data from window and prints to console
 
         This function runs when the user clicks on the "Ok" button. It gets
@@ -106,7 +106,7 @@ def main_window():
     # Status indicator
     status_label = ttk.Label(root, text="Status")
     status_label.grid(column=0, row=20)
-    
+
     # Buttons
     ttk.Button(root, text="Ok", command=ok_cmd).grid(column=1, row=20)
     ttk.Button(root, text="Cancel", command=cancel_cmd).grid(column=2, row=20)
